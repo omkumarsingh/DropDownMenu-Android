@@ -7,13 +7,16 @@
 
     <TextView
         android:id="@+id/dropdown_textview"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="dp"
         android:background="@drawable/dropdown_background"
-        android:drawableRight="@drawable/icn_dropdown_open"
+        android:drawableLeft="@drawable/icon_tab_bar_my_profile"
+        android:drawableRight="@drawable/android_ui_arrow"
         android:gravity="center_vertical|left"
         android:padding="10dip"
-        android:text="Dropdown alts:" />
+        android:text="Dropdown alts:"
+        android:textSize="17dp" />
 
     <Button
         android:id="@+id/button1"
@@ -40,10 +43,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/dropdown_selector"
+            android:drawableLeft="@drawable/icon_tab_bar_my_profile"
             android:drawableRight="@drawable/icn_dropdown_checked"
             android:gravity="center_vertical|left"
             android:padding="10dip"
-            android:text="@string/alt0" />
+            android:text="@string/alt0"
+            android:textSize="17dp" />
 
         <View
             android:layout_width="fill_parent"
@@ -55,9 +60,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/dropdown_selector"
+            android:drawableLeft="@drawable/icon_tab_bar_deals"
             android:gravity="center_vertical|left"
             android:padding="10dip"
-            android:text="@string/alt1" />
+            android:text="@string/alt1"
+            android:textSize="17dp" />
 
         <View
             android:layout_width="fill_parent"
@@ -69,9 +76,28 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/dropdown_selector"
+            android:drawableLeft="@drawable/icon_tab_bar_ibid"
             android:gravity="center_vertical|left"
             android:padding="10dip"
-            android:text="@string/alt2" />
+            android:text="@string/alt2"
+            android:textSize="17dp" />
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/dropdown_alt3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dropdown_selector"
+            android:drawableLeft="@drawable/icon_tab_bar_live"
+            android:gravity="center_vertical|left"
+            android:padding="10dip"
+            android:text="@string/alt3"
+            android:textSize="17dp" />
+
     </LinearLayout>
 
 </RelativeLayout>

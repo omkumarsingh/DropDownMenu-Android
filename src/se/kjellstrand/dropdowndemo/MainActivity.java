@@ -1,6 +1,8 @@
 
 package se.kjellstrand.dropdowndemo;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,9 +18,12 @@ public class MainActivity extends Activity {
 
     /** Layout holding the droddown view */
     private LinearLayout mDropdownFoldOutMenu;
+    private final int[] imgs = {R.drawable.icon_tab_bar_my_profile, R.drawable.icon_tab_bar_deals,
+    							R.drawable.icon_tab_bar_ibid, R.drawable.icon_tab_bar_live};
 
     /** Textview holding the title of the droddown */
     private TextView mDropdownTitle;
+    private byte sel = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class MainActivity extends Activity {
         final TextView alt0 = (TextView) findViewById(R.id.dropdown_alt0);
         final TextView alt1 = (TextView) findViewById(R.id.dropdown_alt1);
         final TextView alt2 = (TextView) findViewById(R.id.dropdown_alt2);
+        final TextView alt3 = (TextView) findViewById(R.id.dropdown_alt3);
 
         dropDownTextView.setOnClickListener(
                 new OnClickListener() {
@@ -50,11 +56,13 @@ public class MainActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         dropDownTextView.setText(R.string.alt0);
+                        sel = 0;
                         closeDropdown();
-                        alt0.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                        alt0.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0,
                                 R.drawable.icn_dropdown_checked, 0);
-                        alt1.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                        alt2.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                        alt1.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0, 0, 0);
+                        alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0, 0, 0);
+                        alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, 0, 0);
                         Toast.makeText(getBaseContext(), R.string.alt0, Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -64,11 +72,13 @@ public class MainActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         dropDownTextView.setText(R.string.alt1);
+                        sel = 1;
                         closeDropdown();
-                        alt0.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                        alt1.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                        alt0.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0, 0, 0);
+                        alt1.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0,
                                 R.drawable.icn_dropdown_checked, 0);
-                        alt2.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                        alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0, 0, 0);
+                        alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, 0, 0);
                         Toast.makeText(getBaseContext(), R.string.alt1, Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -78,12 +88,29 @@ public class MainActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         dropDownTextView.setText(R.string.alt2);
+                        sel = 2;
                         closeDropdown();
-                        alt0.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                        alt1.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                        alt2.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                        alt0.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0, 0, 0);
+                        alt1.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0, 0, 0);
+                        alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0,
                                 R.drawable.icn_dropdown_checked, 0);
+                        alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, 0, 0);
                         Toast.makeText(getBaseContext(), R.string.alt2, Toast.LENGTH_SHORT).show();
+                    }
+                });
+        
+        alt3.setOnClickListener(
+                new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dropDownTextView.setText(R.string.alt3);
+                        sel = 3;
+                        closeDropdown();
+                        alt0.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0, 0, 0);
+                        alt1.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0, 0, 0);
+                        alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0, 0, 0);
+                        alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, R.drawable.icn_dropdown_checked, 0);
+                        Toast.makeText(getBaseContext(), R.string.alt3, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -96,8 +123,19 @@ public class MainActivity extends Activity {
             ScaleAnimation anim = new ScaleAnimation(1, 1, 0, 1);
             anim.setDuration(getResources().getInteger(R.integer.dropdown_amination_time));
             mDropdownFoldOutMenu.startAnimation(anim);
-            mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0,
-                    R.drawable.icn_dropdown_close, 0);
+            if (sel == 0) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0,
+                        R.drawable.icn_dropdown_close, 0);
+            } else if (sel == 1) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0,
+                        R.drawable.icn_dropdown_close, 0);
+            } else if (sel == 2) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0,
+                        R.drawable.icn_dropdown_close, 0);
+            } else if (sel == 3) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0,
+                        R.drawable.icn_dropdown_close, 0);
+            }
             mDropdownFoldOutMenu.setVisibility(View.VISIBLE);
         }
     }
@@ -123,8 +161,22 @@ public class MainActivity extends Activity {
                     mDropdownFoldOutMenu.setVisibility(View.GONE);
                 }
             });
-            mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0,
-                    R.drawable.icn_dropdown_open, 0);
+            
+            if (sel == 0) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0,
+                        R.drawable.icn_dropdown_open, 0);
+            } else if (sel == 1) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0,
+                        R.drawable.icn_dropdown_open, 0);
+            } else if (sel == 2) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0,
+                        R.drawable.icn_dropdown_open, 0);
+            } else if (sel == 3) {
+            	mDropdownTitle.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0,
+                        R.drawable.icn_dropdown_open, 0);
+            }
+            
+            
             mDropdownFoldOutMenu.startAnimation(anim);
         }
     }
