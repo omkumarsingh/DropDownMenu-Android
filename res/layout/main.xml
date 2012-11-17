@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/dropdown_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="dp"
         android:background="@drawable/dropdown_background"
