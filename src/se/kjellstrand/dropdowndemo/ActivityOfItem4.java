@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class ActivityOfItem4 extends Activity {
 
     /** Layout holding the droddown view */
     private LinearLayout mDropdownFoldOutMenu;
@@ -29,18 +29,18 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_item_4);
 
         mDropdownFoldOutMenu = ((LinearLayout) findViewById(R.id.dropdown_foldout_menu));
         mDropdownTitle = ((TextView) findViewById(R.id.dropdown_textview));
 
         final TextView dropDownTextView = (TextView) findViewById(R.id.dropdown_textview);
         final TextView alt0 = (TextView) findViewById(R.id.dropdown_alt0);
-        alt0.setCompoundDrawablesWithIntrinsicBounds(imgs[0], 0,
-                R.drawable.icn_dropdown_checked, 0);
         final TextView alt1 = (TextView) findViewById(R.id.dropdown_alt1);
         final TextView alt2 = (TextView) findViewById(R.id.dropdown_alt2);
         final TextView alt3 = (TextView) findViewById(R.id.dropdown_alt3);
+        alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0,
+                R.drawable.icn_dropdown_checked, 0);
 
         dropDownTextView.setOnClickListener(
                 new OnClickListener() {
@@ -66,8 +66,9 @@ public class MainActivity extends Activity {
                         alt1.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0, 0, 0);
                         alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0, 0, 0);
                         alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, 0, 0);
-                        
-                        Toast.makeText(getBaseContext(), "You are alredy on item 1", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(ActivityOfItem4.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 });
 
@@ -83,8 +84,8 @@ public class MainActivity extends Activity {
                                 R.drawable.icn_dropdown_checked, 0);
                         alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0, 0, 0);
                         alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, 0, 0);
-                        
-                        Intent intent = new Intent(MainActivity.this, ActivityOfItem2.class);
+
+                        Intent intent = new Intent(ActivityOfItem4.this, ActivityOfItem2.class);
                         startActivity(intent);
                     }
                 });
@@ -101,8 +102,8 @@ public class MainActivity extends Activity {
                         alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0,
                                 R.drawable.icn_dropdown_checked, 0);
                         alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, 0, 0);
-                        
-                        Intent intent = new Intent(MainActivity.this, ActivityOfItem3.class);
+
+                        Intent intent = new Intent(ActivityOfItem4.this, ActivityOfItem3.class);
                         startActivity(intent);
                     }
                 });
@@ -118,9 +119,6 @@ public class MainActivity extends Activity {
                         alt1.setCompoundDrawablesWithIntrinsicBounds(imgs[1], 0, 0, 0);
                         alt2.setCompoundDrawablesWithIntrinsicBounds(imgs[2], 0, 0, 0);
                         alt3.setCompoundDrawablesWithIntrinsicBounds(imgs[3], 0, R.drawable.icn_dropdown_checked, 0);
-                        
-                        Intent intent = new Intent(MainActivity.this, ActivityOfItem4.class);
-                        startActivity(intent);
                     }
                 });
     }

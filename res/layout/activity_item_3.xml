@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:background="@drawable/dropdown_background"
-        android:drawableLeft="@drawable/icon_tab_bar_my_profile"
+        android:drawableLeft="@drawable/icon_tab_bar_ibid"
         android:drawableRight="@drawable/android_ui_arrow"
         android:gravity="center_vertical|left"
         android:padding="10dip"
-        android:text="@string/alt0"
+        android:text="@string/alt2"
         android:textSize="17dp" />
 
     <LinearLayout
@@ -29,50 +29,54 @@
             android:id="@+id/button1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dip"
             android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dip"
             android:padding="10dip"
-            android:text="activity 1"
+            android:text="activity 3"
             android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <requestFocus />
-        </EditText>
-
-        <ProgressBar
-            android:id="@+id/progressBar1"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
         <RadioGroup
             android:id="@+id/radioGroup1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
-            <RadioButton
-                android:id="@+id/radio0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="RadioButton" />
-
-            <RadioButton
-                android:id="@+id/radio1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
-
-            <RadioButton
-                android:id="@+id/radio2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone" />
 
     </LinearLayout>
 
@@ -82,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dropdown_textview"
         android:layout_gravity="top"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="2dip"
         android:background="@drawable/dropdown_background"
         android:orientation="vertical"
         android:padding="1dip"

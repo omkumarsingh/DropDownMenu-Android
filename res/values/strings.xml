@@ -1,9 +1,9 @@
 <resources>
 
     <string name="app_name">DropDownDemo</string>
-    <string name="alt0">DropDownDemo</string>
-    <string name="alt1">A menu alt</string>
-    <string name="alt2">An other alt</string>
+    <string name="alt0">Item 1</string>
+    <string name="alt1">Item 2</string>
+    <string name="alt2">Item 3</string>
     <string name="alt3">Bla bla 4</string>
 
 </resources>
